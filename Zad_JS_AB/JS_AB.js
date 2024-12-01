@@ -30,7 +30,7 @@ function isDevided() {
 isDevided()
 
 
-//Zad 3 Tabliczka mnożenia
+
 console.log("3.Tabliczka mnożenia")
 
 function multiplicationTable(size) {
@@ -95,11 +95,121 @@ function christmasTreeAtNight(height) {
 christmasTreeAtNight(5)
 
 
-console.log("Funkcja licząca pole figury")
+console.log("7.Funkcja licząca pole figury")
 
-function calculationArea() {
-    let a =
-    switch (size) {
-        case 1(trapez):
+function poleFigury(typ, ...wymiary) {
+    let wynik;
+    switch (typ) {
+        case 'prostokąt':
+            wynik = poleProstokata(wymiary[0], wymiary[1]);
+            break;
+        case 'trapez':
+            wynik = poleTrapezu(wymiary[0], wymiary[1], wymiary[2]);
+            break;
+        case 'równoległobok':
+            wynik = poleRownolegloboku(wymiary[0], wymiary[1]);
+            break;
+        case 'trójkąt':
+            wynik = poleTrojkata(wymiary[0], wymiary[1]);
+            break;
+        default:
+            wynik = 'Nieznany typ figury';
     }
+    return wynik;
 }
+
+function poleProstokata(a, b) {
+    return a * b;
+}
+
+function poleTrapezu(a, b, h) {
+    return ((a + b) * h) / 2;
+}
+
+function poleRownolegloboku(a, h) {
+    return a * h;
+}
+
+function poleTrojkata(a, h) {
+    return (a * h) / 2;
+}
+
+let wynikProstokata = poleFigury('prostokąt', 5, 10);
+console.log(wynikProstokata); 
+
+
+console.log("8.Pole figur bez if itd..")
+let figura;
+function polaFigur(figura, a, b, h) {
+    let powPola = {
+        "prostokat": (a, b) => a * b,
+        "trapez": (a, b, h) => ((a + b) * h) / 2,
+        "rownoleglobok": (a, h) => a * h,
+        "trojkat": (a, h) => (a * h) / 2
+    };
+ 
+    return powPola[figura](a, b, h);
+}
+console.log(polaFigur("trojkat",2,4,5))
+
+console.log("9.Trójkąt Pascala")
+
+function pascalTriangle(wysokosc) {
+    let trojkat = [[1]];
+    for (let i = 1; i < wysokosc; i++) {
+        let wiersz = [1];
+        for (let j = 1; j < i; j++) {
+            wiersz[j] = trojkat[i - 1][j - 1] + trojkat[i - 1][j];
+        }
+        wiersz.push(1);
+        trojkat.push(wiersz);
+    }
+    trojkat.forEach(wiersz => console.log(wiersz.join(' ')));
+}
+
+let wysokosc = pascalTriangle(10);
+
+console.log("10.Cenzura")
+
+function cenzura(niedozwoloneSlowa, zdanie) {
+    let wynik = '';
+    let slowo = '';
+    
+    for (let i = 0; i <= zdanie.length; i++) {
+        let znak = zdanie[i] || ' '; 
+        if (znak === ' ' || i === zdanie.length) {
+            let czyCenzurowac = false;
+            
+            
+            for (let j = 0; j < niedozwoloneSlowa.length; j++) {
+                if (slowo === niedozwoloneSlowa[j]) {
+                    czyCenzurowac = true;
+                    break;
+                }
+            }
+
+            
+            if (czyCenzurowac) {
+                for (let k = 0; k < slowo.length; k++) {
+                    wynik += '*';
+                }
+            } else {
+                wynik += slowo;
+            }
+
+            wynik += znak; 
+            slowo = ''; 
+        } else {
+            slowo += znak; 
+        }
+    }
+    
+    return wynik.trim();
+}
+
+let zdanie = "Ala ma kota i psa";
+let niedozwolone = ['Ala', 'kota'];
+let wynikCenzury = cenzura(niedozwolone, zdanie);
+console.log(wynikCenzury); 
+
+
