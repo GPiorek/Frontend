@@ -57,7 +57,7 @@ function fibonacci(range) {
 
 }
 
-fibonacci(21)
+fibonacci(100)
 
 console.log("5.Choinka")
 

@@ -1,0 +1,26 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    background-color: #fff;
+    color: #444;
+    border:10px;
+    margin: 10px;
+}
+.box{
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    font-size: 150%;
+}
+
+.ButtonWraper{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    border: 10px;
+    margin: 10px;
+    button-color: moccasin;
+}
