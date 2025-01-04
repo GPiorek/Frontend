@@ -1,9 +1,17 @@
-const hamMenu = document.querySelector('.hamburgerMenu');
+document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+        animation: gsap.from(".logo", {
+            y: "30vh",
+            scale: 3,
+        })
+    })
 
-const offScreenMenu = document.querySelector('.offScreenMenu');
 
-hamMenu.addEventListener('click', () => {
-    hamMenu.classList.toggle('active');
-    offScreenMenu.classList.toggle('active');
-})
-console.log("test")
+const offerPopUp = document.querySelector(".Offer")
+
+offerPopUp.onclick = function () {
+    console.log("OfferPopUp clicked");
+}
+
+});

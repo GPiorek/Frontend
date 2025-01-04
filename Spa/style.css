@@ -1,58 +1,98 @@
-.offScreenMenu{
-    background-color: #3a1158;
-    height: 100vh;
+* {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-decoration-color: white;
+}
+
+body {
+    background-color: rgba(5, 13, 32, 255);
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+    font-family: "Gill Sans MT", Calibri, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    margin: 100px;
+}
+
+a:hover {
+    color: #066882
+}
+
+header {
+    padding: 0 2rem;
+}
+
+.navBar {
     width: 100%;
-    max-width: 450px;
-    position: fixed;
-    top: 0;
-    right: -450px;
+    height: 120px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    font-size: 3rem;
-    transition: .3s ease;
+    justify-content: space-between;
+    padding: 0 4em;
+    z-index: 999;
+    margin: 0 auto;
 }
-.offScreenMenu.active{
-    right: 0;
-}
-nav {
-    padding: 1rem;
+
+.logo {
+    height: 120px;
     display: flex;
-    background-color: burlywood;
-}
-.hamburgerMenu{
-    height: 50px;
-    width: 50px;
-    margin-left: auto;
-    position: relative;
-}
-.hamburgerMenu span{
-    height: 5px;
-    width: 100%;
-    background-color: black;
-    border-radius: 25px;
-    position: absolute;
-    top: 50%;
+    align-items: center;
+    transform: translateX(-50%);
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
-    transition: .3s ease;
+    z-index: 1000;
+    position: absolute;
+
+
 }
-.hamburgerMenu span:nth-child(1) {
-    top: 25%;
+
+.logo-container {
+    margin: 0 auto;
 }
-.hamburgerMenu span:nth-child(3) {
-    top: 75%;
+
+.content {
+    width: 100%;
+    height: 300vh;
+    position: relative;
+    padding: 0 4em;
 }
-.hamburgerMenu.active span:nth-child(1) {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+
+.links {
+    display: flex;
+    gap: 1rem;
 }
-.hamburgerMenu.active span:nth-child(2) {
-    opacity: 0;
+
+.onTopBtn{
+    position:fixed;
+    right: 0;
+    top: 95%;
+    height: 40px;
+    width: 40px;
 }
-.hamburgerMenu.active span:nth-child(3) {
-    top: 50%;
-    transform: translate(-50%, 50%) rotate(-45deg);
+
+.content{
+    color: white;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: rgb(0, 8, 19);
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#642bff, #ff22e6);
+    border-radius: 10px;
 }
