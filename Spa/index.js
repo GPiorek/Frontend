@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.create({
-        animation: gsap.from(".logo", {
-            y: "30vh",
-            scale: 3,
-        })
-    })
 
 
-const offerPopUp = document.querySelector(".Offer")
+    let openBtn = document.getElementById("popUpOpen");
+    openBtn.onclick = function () {
+        document.getElementById("popUpMain").style.display = "block";
+    }
 
-offerPopUp.onclick = function () {
-    console.log("OfferPopUp clicked");
+    let closeBtn = document.getElementById("popUpClose");
+    closeBtn.onclick = function () {
+        document.getElementById("popUpMain").style.display = "none";
+    }
+
+document.getElementById("popUpOfferMobile").onclick = function () {
+    document.getElementById("popUpMain").style.display = "block";
 }
-
 });
