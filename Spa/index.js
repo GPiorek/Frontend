@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("popUpMain").style.display = "none";
     }
 
-document.getElementById("popUpOfferMobile").onclick = function () {
-    document.getElementById("popUpMain").style.display = "block";
-}
+    document.getElementById("popUpOfferMobile").onclick = function () {
+        document.getElementById("popUpMain").style.display = "block";
+    }
 
-let popUpMainGallery = document.getElementById("popUpMainGallery");
+    let popUpMainGallery = document.getElementById("popUpMainGallery");
     let openBtnGallery = document.getElementById("popUpOpenGallery");
     openBtnGallery.onclick = function () {
         document.getElementById("popUpMainGallery").style.display = "block";
