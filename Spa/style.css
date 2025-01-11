@@ -1,7 +1,42 @@
 * {
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Lexend Tera"
+
+}
+
+.lexend-tera-unique {
+    font-family: "Lexend Tera", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+.body {
+    font-family: "Belleza-regular", serif;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2, h3, button{
+    display: inline-block; 
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+h2, h3, button:hover{
+    transform: translateY(-10px);
+
 }
 
 html {
@@ -12,32 +47,55 @@ html {
 
 body {
     background-color: rgba(5, 13, 32, 255);
-overflow:hidden;
+    overflow: hidden;
 }
 
-.section{
+.leftText {
+    margin-top: 20px;
+}
+
+.section {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding:20px;
+    padding: 20px;
     color: white;
     scroll-snap-align: start;
+    align-items: flex-start;
 }
-#section1{
-    padding-top:80px;
-    top: 20%
+
+#section1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5px;
 }
-#section2{
+
+#section1 h2 {
+    margin-top: 10%;
+    font-size: 60px;
+    top: 40%;
+}
+
+#section1 img {
+    height: 80vh;
+    width: 80vh;
+    margin: auto;
+}
+
+#section1 h3 {
+    font-size: 40px;
+    top: 90%;
+}
+
+#section2 {
     background-color: rgba(5, 5, 22, 255);
 }
 
-#section3{
+#section3 {
     background-color: rgb(18, 18, 56);
 }
 
-#section4{
+#section4 {
     background-color: rgb(6, 6, 35);
 }
 
@@ -58,15 +116,16 @@ header {
     justify-content: space-between;
     position: sticky;
     top: 0;
-
+    animation: fadeInUp 1.5s ease-out;
 }
 
-.container{
+.container {
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     margin: 0;
 }
+
 .logo {
     height: 110px;
     display: flex;
@@ -124,7 +183,7 @@ header {
     width: 90%;
     z-index: 999;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);!important;
     padding: 10px;
     border-radius: 10px;
     bottom: 13%;
@@ -133,21 +192,18 @@ header {
 }
 
 
-
-
 .leftNav, .rightNav {
     display: flex;
     gap: 200px;
 }
 
 
-
 #popUp-content, #popUp-contentGallery, .popUpOpenContact {
     color: white;
-    font-family: "Gill Sans MT", Calibri, sans-serif;
     font-weight: 400;
     font-size: 25px;
     gap: 2rem;
+
 }
 
 .firstOffer, .secondOffer, .thirdOffer, .fourthOffer, .fifthOffer, .sixthOffer, .seventhOffer, .eightOffer, .ninthOffer {
@@ -177,6 +233,7 @@ header {
     flex-direction: row;
     gap: 2rem;
 }
+
 #popUpMainGallery, #popUpMainContact {
     top: 53% !important;
     left: 50% !important;
@@ -196,6 +253,7 @@ header {
     color: white;
     border: none;
     font-size: 30px;
+    animation: fadeInUp 1.5s ease-out;
 }
 
 .masonry {
@@ -223,16 +281,40 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .item:hover {
     transform: translateY(-10px);
 }
 
-.item1 { grid-row: span 15; background-image: url("g1.jpg"); }
-.item2 { grid-row: span 20; background-image: url("j3.jpg"); }
-.item3 { grid-row: span 15; background-image: url("k2.jpg"); }
-.item4 { grid-row: span 25; background-image: url("g3.jpg"); }
-.item5 { grid-row: span 30; background-image: url("j1.jpg"); }
-.item6 { grid-row: span 15; background-image: url("k3.jpg"); }
+.item1 {
+    grid-row: span 15;
+    background-image: url("g1.jpg");
+}
+
+.item2 {
+    grid-row: span 20;
+    background-image: url("j3.jpg");
+}
+
+.item3 {
+    grid-row: span 15;
+    background-image: url("k2.jpg");
+}
+
+.item4 {
+    grid-row: span 25;
+    background-image: url("g3.jpg");
+}
+
+.item5 {
+    grid-row: span 30;
+    background-image: url("j1.jpg");
+}
+
+.item6 {
+    grid-row: span 15;
+    background-image: url("k3.jpg");
+}
 
 
 #popUpClose:hover, #popUpCloseGallery:hover, #popUpCloseContact:hover {
@@ -245,7 +327,6 @@ header {
     background: none;
     border: none;
     color: white;
-    font-family: "Gill Sans MT", Calibri, sans-serif;
     font-size: 30px;
 
 }
@@ -265,16 +346,14 @@ header {
 
 }
 
-#popUp-contentGallery, #popUp-contentContact{
+#popUp-contentGallery, #popUp-contentContact {
     color: white;
-    font-family: "Gill Sans MT", Calibri, sans-serif;
     font-weight: 400;
     font-size: 30px;
     transition: 0.5s;
     gap: 2rem;
-    text-align:left;
+    text-align: left;
 }
-
 
 
 @media screen and (max-width: 1100px) {
@@ -328,6 +407,7 @@ header {
     .mobileMenuContent button:hover {
         Background: linear-gradient(#642bff, #ff22e6);
     }
+
     .popUpMenu {
         display: block;
     }
